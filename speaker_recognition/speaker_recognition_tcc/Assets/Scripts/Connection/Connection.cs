@@ -7,7 +7,17 @@ using UnityEngine.Networking;
 
 public class Connection : MonoBehaviour
 {
-    
+    public static string petName;
+    public delegate void ResponseReceivedDelegate(string jsonResponse);
+    public static event ResponseReceivedDelegate OnResponseReceived;
+
+    [System.Serializable]
+    public class Prediction
+    {
+        public string predicao;
+        public string speech;
+    }
+
     // Making the API Request
     IEnumerator SendPredictionRequest()
     {
@@ -27,6 +37,13 @@ public class Connection : MonoBehaviour
     {
         string responseText = webRequest.downloadHandler.text;
         Debug.Log("Response: " + responseText);
+        Prediction prediction = JsonUtility.FromJson<Prediction>(responseText);
+        OnResponseReceived?.Invoke(prediction.predicao);
+
+        // Now 'data' object contains the parsed JSON data.
+        Debug.Log("Name: " + prediction.predicao);
+        
+        petName = prediction.predicao;
     }
 }
 
