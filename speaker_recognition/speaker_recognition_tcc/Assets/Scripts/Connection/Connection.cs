@@ -14,7 +14,7 @@ public class Connection : MonoBehaviour
     [System.Serializable]
     public class Prediction
     {
-        public string predicao;
+        public string speaker;
         public string speech;
     }
 
@@ -38,19 +38,19 @@ public class Connection : MonoBehaviour
         string responseText = webRequest.downloadHandler.text;
         Debug.Log("Response: " + responseText);
         Prediction prediction = JsonUtility.FromJson<Prediction>(responseText);
-        OnResponseReceived?.Invoke(prediction.predicao);
+        OnResponseReceived?.Invoke(prediction.speaker);
 
         // Now 'data' object contains the parsed JSON data.
-        Debug.Log("Name: " + prediction.predicao);
+        Debug.Log("Name: " + prediction.speaker);
         
-        petName = prediction.predicao;
+        petName = prediction.speaker;
     }
 }
 
 [System.Serializable]
 public class PredictionResponse
 {
-    public string predicao;
+    public string speaker;
 }
 
 public void OnPredictionTest()
