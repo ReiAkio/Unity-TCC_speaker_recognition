@@ -7,9 +7,10 @@ using UnityEngine.Networking;
 
 public class Connection : MonoBehaviour
 {
-    
+
+    public static long statusCode { get; private set; }
     // Making the API Request
-    IEnumerator SendPredictionRequest()
+    public static IEnumerator SendPredictionRequest()
     {
         // string ngrokUrl = "http://randomstring.ngrok.io";
         // string apiUrl = ngrokUrl + "/";
@@ -22,11 +23,16 @@ public class Connection : MonoBehaviour
         if (webRequest.result != UnityWebRequest.Result.Success)
     {
         Debug.LogError("Error: " + webRequest.error);
+        statusCode = webRequest.responseCode;
+        Debug.Log(("error code: " + statusCode));
+
     }
     else
     {
         string responseText = webRequest.downloadHandler.text;
         Debug.Log("Response: " + responseText);
+        statusCode = webRequest.responseCode;
+        Debug.Log(("Status Code: " + statusCode));
     }
 }
 
