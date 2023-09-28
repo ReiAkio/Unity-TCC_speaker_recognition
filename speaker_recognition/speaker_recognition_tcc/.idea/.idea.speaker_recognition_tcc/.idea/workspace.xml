@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="855d7d82-3eff-491d-88cc-468c6b770365" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Connection/Connection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Connection/Connection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nine Pines Animation/2D Character Sprite Animation - Penguin/Animations/penguin_idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Nine Pines Animation/2D Character Sprite Animation - Penguin/Animations/penguin_idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nine Pines Animation/2D Character Sprite Animation - Penguin/Animations/penguin_idle_01.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Nine Pines Animation/2D Character Sprite Animation - Penguin/Animations/penguin_idle_01.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Room.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +90,7 @@
       <workItem from="1692873933886" duration="607000" />
       <workItem from="1692874578699" duration="3736000" />
       <workItem from="1693479681589" duration="3863000" />
+      <workItem from="1695900863257" duration="297000" />
     </task>
     <servers />
   </component>
