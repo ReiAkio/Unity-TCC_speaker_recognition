@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5a31b62af7f1ea44b871f2f9914910f0
+guid: cd44f44f410835442ae254b1f03c443f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: luzes_0
+      name: raviideia_OK_Left_0
       rect:
         serializedVersion: 2
-        x: 318
-        y: 775
-        width: 109
-        height: 305
+        x: 0
+        y: 0
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d5ad7f3d01cd264b98268c65b029c2a
-      internalID: 1779663369
+      spriteID: 397dc48e137dfa049b46e67c9208d0f9
+      internalID: -1158412318
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: luzes_1
+      name: raviideia_OK_Left_1
       rect:
         serializedVersion: 2
-        x: 756
-        y: 775
-        width: 109
-        height: 305
+        x: 1080
+        y: 0
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f146e8a3a62e72408c90defe06353ac
-      internalID: 448690283
+      spriteID: 19ec7568a49eb904491016463b8fac4d
+      internalID: 713976960
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: luzes_2
+      name: raviideia_OK_Left_2
       rect:
         serializedVersion: 2
-        x: 1195
-        y: 775
-        width: 110
-        height: 305
+        x: 2160
+        y: 0
+        width: 1080
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,8 +160,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7e9e68aadc485548b9e30929f844347
-      internalID: 1587646768
+      spriteID: 29a3d034875cea8478360a20ada19367
+      internalID: -668429613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raviideia_OK_Left_3
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 0
+        width: 1080
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d564da0020b42cf4aa391cea7c997419
+      internalID: -1451629418
       vertices: []
       indices: 
       edges: []
@@ -177,9 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      luzes_2: 1587646768
-      luzes_1: 448690283
-      luzes_0: 1779663369
+      raviideia_OK_Left_3: -1451629418
+      raviideia_OK_Left_1: 713976960
+      raviideia_OK_Left_0: -1158412318
+      raviideia_OK_Left_2: -668429613
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

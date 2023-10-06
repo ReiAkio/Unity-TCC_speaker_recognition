@@ -6,21 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="855d7d82-3eff-491d-88cc-468c6b770365" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.speaker_recognition_tcc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.speaker_recognition_tcc/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Furnitures/janela.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Furnitures/janela.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Furnitures/porta.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Furnitures/porta.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Furnitures/sofa.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Furnitures/sofa.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Furnitures/tv.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Furnitures/tv.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Furnitures/tvligado.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Furnitures/tvligado.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Furnitures/luzes.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Furnitures/luzes.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Pet/Animations/Ravi_Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Pet/Animations/Ravi_Idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Pet/Animations/Ravi_Idle_Controller.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Pet/Animations/Ravi_Idle_Controller.controller.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Room.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actions/Door.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actions/Door/MoveToDoor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actions/Door/MoveToDoor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actions/PlayerActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Actions/PlayerActions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Connection/Connection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Connection/Connection.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Actions/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2Tn6HdxQDJ2SScDjdCe8Zg13v47" />
   <component name="ProjectViewState">
@@ -99,7 +99,9 @@
       <workItem from="1692874578699" duration="3736000" />
       <workItem from="1693479681589" duration="3863000" />
       <workItem from="1695900863257" duration="898000" />
-      <workItem from="1695905639164" duration="3862000" />
+      <workItem from="1695905639164" duration="4502000" />
+      <workItem from="1696506753060" duration="6679000" />
+      <workItem from="1696562914795" duration="751000" />
     </task>
     <servers />
   </component>

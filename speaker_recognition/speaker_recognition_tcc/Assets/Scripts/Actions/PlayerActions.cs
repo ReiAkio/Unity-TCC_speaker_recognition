@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
 {
-public float speed = 5.0f;
+    public float speed = 5.0f;
     private bool moveToTarget = false;
     public Transform targetTransform;
     private Animator playerAnimator;
@@ -23,7 +23,7 @@ public float speed = 5.0f;
     void Update()
     {
         HandleInput();
-        
+
         if (moveToTarget && targetTransform != null)
         {
             Vector2 direction = (targetTransform.position - transform.position).normalized;
@@ -32,7 +32,7 @@ public float speed = 5.0f;
             if (Vector2.Distance(transform.position, targetTransform.position) < 0.1f)
             {
                 moveToTarget = false;
-                playerAnimator.SetBool("IsWalking", false);
+                SetMoveDirection(false, false);  // Paramos o movimento
                 ExecuteTargetInteraction();
             }
         }
@@ -62,8 +62,26 @@ public float speed = 5.0f;
         if (targetTransform != null)
         {
             moveToTarget = true;
-            playerAnimator.SetBool("IsWalking", true);
+
+            // Determine a direção baseada na posição X do jogador e do objeto alvo
+            float direction = targetTransform.position.x - transform.position.x;
+
+            if (direction > 0)
+            {
+                SetMoveDirection(true, false);  // Movendo para direita
+            }
+            else if (direction < 0)
+            {
+                SetMoveDirection(false, true);  // Movendo para esquerda
+            }
         }
+    }
+
+    void SetMoveDirection(bool moveRight, bool moveLeft)
+    {
+        Debug.Log($"Setting MoveRight to {moveRight} and MoveLeft to {moveLeft}");
+        playerAnimator.SetBool("MoveRight", moveRight);
+        playerAnimator.SetBool("MoveLeft", moveLeft);
     }
 
     void ExecuteTargetInteraction()

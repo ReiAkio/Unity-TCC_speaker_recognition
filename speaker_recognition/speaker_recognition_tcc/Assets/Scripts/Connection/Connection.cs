@@ -39,7 +39,8 @@ public class Connection : MonoBehaviour
 [System.Serializable]
 public class PredictionResponse
 {
-    public string predicao;
+    public string speaker;
+    public string speech;
 }
 
 public void OnPredictionTest()
