@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
@@ -7,33 +5,35 @@ public class PlayerActions : MonoBehaviour
     public float speed = 5.0f;
     private bool moveToTarget = false;
     public Transform targetTransform;
-    private Animator playerAnimator;
-    private Animator targetAnimator;
 
-    // Novos sprites para cada objeto
-    public Sprite tvNewSprite; 
-    public Sprite doorNewSprite; 
+    public Sprite tvNewSprite;
+    public Sprite doorNewSprite;
     public Sprite windowNewSprite;
 
-    void Start()
+    private PetAnimationManager petAnimManager;
+
+    private void Awake()
     {
-        playerAnimator = GetComponent<Animator>();
+        petAnimManager = GetComponent<PetAnimationManager>();
     }
 
     void Update()
     {
-        HandleInput();
-
-        if (moveToTarget && targetTransform != null)
+        if (petAnimManager.CanPlayerAct())
         {
-            Vector2 direction = (targetTransform.position - transform.position).normalized;
-            transform.position += (Vector3)direction * speed * Time.deltaTime;
+            HandleInput();
 
-            if (Vector2.Distance(transform.position, targetTransform.position) < 0.1f)
+            if (moveToTarget && targetTransform != null)
             {
-                moveToTarget = false;
-                SetMoveDirection(false, false);  // Paramos o movimento
-                ExecuteTargetInteraction();
+                Vector2 direction = (targetTransform.position - transform.position).normalized;
+                transform.position += (Vector3)direction * speed * Time.deltaTime;
+
+                if (Vector2.Distance(transform.position, targetTransform.position) < 0.1f)
+                {
+                    moveToTarget = false;
+                    petAnimManager.StopWalking();
+                    ExecuteTargetInteraction();
+                }
             }
         }
     }
@@ -63,37 +63,35 @@ public class PlayerActions : MonoBehaviour
         {
             moveToTarget = true;
 
-            // Determine a direção baseada na posição X do jogador e do objeto alvo
             float direction = targetTransform.position.x - transform.position.x;
 
             if (direction > 0)
             {
-                SetMoveDirection(true, false);  // Movendo para direita
+                petAnimManager.WalkRight();
             }
             else if (direction < 0)
             {
-                SetMoveDirection(false, true);  // Movendo para esquerda
+                petAnimManager.WalkLeft();
             }
         }
-    }
-
-    void SetMoveDirection(bool moveRight, bool moveLeft)
-    {
-        Debug.Log($"Setting MoveRight to {moveRight} and MoveLeft to {moveLeft}");
-        playerAnimator.SetBool("MoveRight", moveRight);
-        playerAnimator.SetBool("MoveLeft", moveLeft);
     }
 
     void ExecuteTargetInteraction()
     {
         if (targetTransform == null) return;
 
-        targetAnimator = targetTransform.GetComponent<Animator>();
-        if (targetAnimator != null)
+        float direction = targetTransform.position.x - transform.position.x;
+
+        if (direction > 0)
         {
-            targetAnimator.SetTrigger("Activate");
+            petAnimManager.ExecuteOkRight();
         }
-        
+        else if (direction < 0)
+        {
+            petAnimManager.ExecuteOkLeft();
+        }
+
+        // Logic for changing the sprite of the target (already written in your previous code)
         SpriteRenderer sr = targetTransform.GetComponent<SpriteRenderer>();
         if (sr != null)
         {

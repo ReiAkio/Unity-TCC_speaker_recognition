@@ -6,13 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="855d7d82-3eff-491d-88cc-468c6b770365" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.speaker_recognition_tcc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.speaker_recognition_tcc/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Furnitures/luzes.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Furnitures/luzes.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Pet/Animations/Ravi_Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Pet/Animations/Ravi_Idle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Pet/Animations/Ravi_Idle_Controller.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Pet/Animations/Ravi_Idle_Controller.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Room.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Pet/Animations/Ravi.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Pet/Animations/Ravi.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actions/PlayerActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Actions/PlayerActions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Connection/Connection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Connection/Connection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pet/PetAnimationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pet/PetAnimationManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +98,7 @@
       <workItem from="1695905639164" duration="4502000" />
       <workItem from="1696506753060" duration="6679000" />
       <workItem from="1696562914795" duration="751000" />
+      <workItem from="1696823593443" duration="2202000" />
     </task>
     <servers />
   </component>
