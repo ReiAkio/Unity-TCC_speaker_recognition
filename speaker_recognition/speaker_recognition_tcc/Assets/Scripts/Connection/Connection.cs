@@ -9,6 +9,8 @@ public class Connection : MonoBehaviour
 {
 
     public static long statusCode { get; private set; }
+    public delegate void OnRequestComplete(long statusCode);
+    public static event OnRequestComplete onRequestComplete;
     // Making the API Request
     public static IEnumerator SendPredictionRequest()
     {
@@ -34,6 +36,8 @@ public class Connection : MonoBehaviour
         statusCode = webRequest.responseCode;
         Debug.Log(("Status Code: " + statusCode));
     }
+        
+        onRequestComplete?.Invoke(statusCode);
 }
 
 [System.Serializable]

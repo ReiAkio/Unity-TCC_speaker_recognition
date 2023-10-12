@@ -55,6 +55,11 @@ public class PlayerActions : MonoBehaviour
             targetTransform = GameObject.FindGameObjectWithTag("Window")?.transform;
             InitiateMovement();
         }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            targetTransform = GameObject.FindGameObjectWithTag("LightBulb")?.transform;
+            InitiateMovement();
+        }
     }
 
     void InitiateMovement()
@@ -77,36 +82,36 @@ public class PlayerActions : MonoBehaviour
     }
 
     void ExecuteTargetInteraction()
-    {
-        if (targetTransform == null) return;
-
-        float direction = targetTransform.position.x - transform.position.x;
-
-        if (direction > 0)
         {
-            petAnimManager.ExecuteOkRight();
-        }
-        else if (direction < 0)
-        {
-            petAnimManager.ExecuteOkLeft();
-        }
+            if (targetTransform == null) return;
 
-        // Logic for changing the sprite of the target (already written in your previous code)
-        SpriteRenderer sr = targetTransform.GetComponent<SpriteRenderer>();
-        if (sr != null)
-        {
-            switch (targetTransform.tag)
+            float direction = targetTransform.position.x - transform.position.x;
+
+            if (direction > 0)
             {
-                case "Tv":
-                    sr.sprite = tvNewSprite;
-                    break;
-                case "Door":
-                    sr.sprite = doorNewSprite;
-                    break;
-                case "Window":
-                    sr.sprite = windowNewSprite;
-                    break;
+                petAnimManager.ExecuteOkRight();
+            }
+            else if (direction < 0)
+            {
+                petAnimManager.ExecuteOkLeft();
+            }
+
+            // Logic for changing the sprite of the target (already written in your previous code)
+            SpriteRenderer sr = targetTransform.GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                switch (targetTransform.tag)
+                {
+                    case "Tv":
+                        sr.sprite = tvNewSprite;
+                        break;
+                    case "Door":
+                        sr.sprite = doorNewSprite;
+                        break;
+                    case "Window":
+                        sr.sprite = windowNewSprite;
+                        break;
+                }
             }
         }
     }
-}
