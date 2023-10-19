@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="855d7d82-3eff-491d-88cc-468c6b770365" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.speaker_recognition_tcc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.speaker_recognition_tcc/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actions/InteractiveObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Actions/InteractiveObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actions/PlayerActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Actions/PlayerActions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Connection/Connection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Connection/Connection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pet/PetAnimationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pet/PetAnimationManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Pet/Animations/Ravi.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Pet/Animations/Ravi.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Room.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +26,9 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Connection/Connection.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Pet/PetAnimationManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Actions/InteractiveObject.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Actions/PlayerActions.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Pet/PetAnimationManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2Tn6HdxQDJ2SScDjdCe8Zg13v47" />
@@ -109,7 +107,7 @@
       <workItem from="1697436166558" duration="673000" />
       <workItem from="1697482737588" duration="9445000" />
       <workItem from="1697656665464" duration="21297000" />
-      <workItem from="1697687524215" duration="10508000" />
+      <workItem from="1697687524215" duration="10917000" />
     </task>
     <servers />
   </component>
