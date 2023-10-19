@@ -77,7 +77,7 @@ public class PlayerActions : MonoBehaviour
             Debug.Log("raviSpeaker" + Connection.raviSpeaker);
             Debug.Log("predictionSpeaker" + Connection.predictionSpeaker);
             
-            if (speech.Contains("Oi Ravi") && speech.Contains("abra") && speech.Contains("porta") && Connection.raviSpeaker == Connection.predictionSpeaker)
+            if (speech.Contains("oi ravi") && speech.Contains("abra") && speech.Contains("porta") && Connection.raviSpeaker == Connection.predictionSpeaker)
             {
                 GameObject tvObject = GameObject.FindGameObjectWithTag("Door");
                 if (tvObject != null)
@@ -90,7 +90,7 @@ public class PlayerActions : MonoBehaviour
                     Debug.Log("Objeto Porta não encontrado!");
                 }
             }
-            if (speech.Contains("Oi Ravi") && speech.Contains("Ligue") && speech.Contains("TV"))
+            if (speech.Contains("oi ravi") && speech.Contains("ligue") && speech.Contains("tv") && Connection.raviSpeaker == Connection.predictionSpeaker)
             {
                 GameObject tvObject = GameObject.FindGameObjectWithTag("Tv");
                 if (tvObject != null)
@@ -103,7 +103,7 @@ public class PlayerActions : MonoBehaviour
                     Debug.Log("Objeto tv não encontrado!");
                 }
             }
-            if (speech.Contains("Oi Ravi") && speech.Contains("abra") && speech.Contains("janela"))
+            if (speech.Contains("oi ravi") && speech.Contains("abra") && speech.Contains("janela")&& Connection.raviSpeaker == Connection.predictionSpeaker)
             {
                 GameObject tvObject = GameObject.FindGameObjectWithTag("Window");
                 if (tvObject != null)
