@@ -13,7 +13,18 @@ public class PlayerInstantiationManager : MonoBehaviour
 
     private void Start()
     {
-        Connection.onRequestComplete += HandleRequestComplete;
+        // existing subscriptions...
+        StartCoroutine(Connection.SendRaviRequest(InstantiatePlayerBasedOnSpeaker));
+    }
+
+    private void InstantiatePlayerBasedOnSpeaker(string speaker)
+    {
+        if (!string.IsNullOrEmpty(speaker))
+        {
+            // Here you might want to have some logic to determine the color based on the speaker
+            // For the purpose of this example, I'll use random colors.
+            InstantiatePlayerWithNewColor();
+        }
     }
 
     private void OnDestroy()

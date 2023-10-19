@@ -7,6 +7,7 @@ TagManager:
   - Tv
   - Window
   - Door
+  - Ravi
   layers:
   - Default
   - TransparentFX
