@@ -20,7 +20,7 @@ public class InteractiveObject : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    /*void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Ravi"))
         {
@@ -28,16 +28,49 @@ public class InteractiveObject : MonoBehaviour
             PlayerActions playerActions = other.GetComponent<PlayerActions>();
             if (playerActions != null && playerActions.targetTransform == transform) // Adicionado comparação com targetTransform
             {
-                playerInRange = true;
-                Debug.Log("Ravi entrou na área de trigger do objeto correto: " + gameObject.name);
-
-                // Parar o Ravi ao entrar na área de trigger
-                playerActions.StopMovement();
-
-                // Interagir com o objeto
-                if (CanPerformAction())
                 {
-                    playerActions.ExecuteTargetInteraction(); 
+                    playerInRange = true;
+                    Debug.Log("Ravi entrou na área de trigger do objeto correto: " + gameObject.name);
+
+                    // Parar o Ravi ao entrar na área de trigger
+                    playerActions.StopMovement();
+
+                    // Interagir com o objeto
+                    if (CanPerformAction())
+                    {
+                        playerActions.ExecuteTargetInteraction();
+                    }
+                    
+                }
+            }
+            else if (playerActions.targetTransform != transform)
+            {
+                Debug.Log("Ravi entrou em uma área de trigger, mas não é o objeto de destino: " + gameObject.name);
+            }
+            
+        }
+    }*/
+    
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Ravi"))
+        {
+            PlayerActions playerActions = other.GetComponent<PlayerActions>();
+            if (playerActions != null && playerActions.targetTransform == transform) // Adicionado comparação com targetTransform
+            {
+                {
+                    playerInRange = true;
+                    Debug.Log("Ravi entrou na área de trigger do objeto correto: " + gameObject.name);
+                    
+                    playerActions.StopMovement();
+
+
+                    // Interagir com o objeto
+                    if (CanPerformAction())
+                    {
+                        playerActions.ExecuteTargetInteraction();
+                    }
+                    
                 }
             }
             else if (playerActions.targetTransform != transform)

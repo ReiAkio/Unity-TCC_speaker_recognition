@@ -43,4 +43,5 @@ public class PetAnimationManager : MonoBehaviour
     {
         animator.SetTrigger("Ok_Left");
     }
+    
 }

@@ -14,7 +14,7 @@ public class PlayerActions : MonoBehaviour
 
     private PetAnimationManager petAnimManager;
     public Rigidbody2D rb;
-    
+
     private void Awake()
     {
         petAnimManager = GetComponent<PetAnimationManager>();
@@ -30,11 +30,12 @@ public class PlayerActions : MonoBehaviour
     {
         //Debug.Log("moveToTarget" + CanPlayerAct());
         if (petAnimManager.CanPlayerAct())
-        {
+        {   
             if (moveToTarget && targetTransform != null)
             {
                 
                 Vector2 direction = (targetTransform.position - transform.position).normalized;
+
                 direction.y = 0; // Ignora a componente 'y' na direção.
                 
                 // Aplicar força na direção do target.
@@ -95,6 +96,7 @@ public class PlayerActions : MonoBehaviour
                 GameObject tvObject = GameObject.FindGameObjectWithTag("Tv");
                 if (tvObject != null)
                 {
+                    Debug.Log("oi");
                     targetTransform = tvObject.transform;
                     InitiateMovement();
                 }
@@ -126,6 +128,7 @@ public class PlayerActions : MonoBehaviour
             petAnimManager.StopWalking(); // Parar a animação de caminhada
             
         }
+        
         void InitiateMovement()
         {
             if (targetTransform != null)
@@ -158,7 +161,7 @@ public class PlayerActions : MonoBehaviour
             
 
             float direction = targetTransform.position.x - transform.position.x;
-
+            
             if (direction > 0)
             {
                 petAnimManager.ExecuteOkRight();
