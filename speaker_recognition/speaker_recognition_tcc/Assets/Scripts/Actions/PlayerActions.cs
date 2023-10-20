@@ -7,11 +7,15 @@ public class PlayerActions : MonoBehaviour
     public Transform targetTransform;
     private string currentSpeaker;
     
+    private float lastInteractionTime = 0f;
+    public float interactionCooldown = 0.5f;
 
-    public Sprite tvNewSprite;
-    public Sprite doorNewSprite;
-    public Sprite windowNewSprite;
-
+    public Sprite tvOpenSprite;
+    public Sprite tvClosedSprite;
+    public Sprite doorOpenSprite;
+    public Sprite doorClosedSprite;
+    public Sprite windowOpenSprite;
+    public Sprite windowClosedSprite;
     private PetAnimationManager petAnimManager;
     public Rigidbody2D rb;
 
@@ -155,38 +159,45 @@ public class PlayerActions : MonoBehaviour
 
         public void ExecuteTargetInteraction()
         {
-            Debug.Log("Executando interação com o objeto");
+            // Check if enough time has passed since the last interaction
+            if (Time.time - lastInteractionTime < interactionCooldown)
+            {
+                Debug.Log("Still in cooldown. Interaction not allowed.");
+                return;
+            }
+
+            Debug.Log("Executing interaction with the object");
             if (targetTransform == null) return;
+
             InteractiveObject interactiveObject = targetTransform.GetComponent<InteractiveObject>();
-            
-
-            float direction = targetTransform.position.x - transform.position.x;
-            
-            if (direction > 0)
-            {
-                petAnimManager.ExecuteOkRight();
-            }
-            else if (direction < 0)
-            {
-                petAnimManager.ExecuteOkLeft();
-            }
-
-            // Logic for changing the sprite of the target (already written in your previous code)
             SpriteRenderer sr = targetTransform.GetComponent<SpriteRenderer>();
-            if (sr != null)
+
+            // Check if we can perform the action
+            if (interactiveObject != null && sr != null && interactiveObject.CanPerformAction())
             {
+                // Toggle the isOpen status
+                interactiveObject.isOpen = !interactiveObject.isOpen;
+
+                // Set the sprite based on the new isOpen status
                 switch (targetTransform.tag)
                 {
                     case "Tv":
-                        sr.sprite = tvNewSprite;
+                        sr.sprite = interactiveObject.isOpen ? tvOpenSprite : tvClosedSprite;
                         break;
                     case "Door":
-                        sr.sprite = doorNewSprite;
+                        sr.sprite = interactiveObject.isOpen ? doorOpenSprite : doorClosedSprite;
                         break;
                     case "Window":
-                        sr.sprite = windowNewSprite;
+                        sr.sprite = interactiveObject.isOpen ? windowOpenSprite : windowClosedSprite;
                         break;
+                    // Add more cases as needed
                 }
+
+                lastInteractionTime = Time.time; // Update the last interaction time after a successful interaction
+            }
+            else
+            {
+                Debug.Log("InteractiveObject or SpriteRenderer not found on the target object, or the player is not in range.");
             }
         }
     }

@@ -10,7 +10,7 @@ public class Connection : MonoBehaviour
 {
 
     private float timer = 0.0f;
-    public float waitTime = 5.0f; // Time in seconds between each request.
+    public float waitTime = 2.0f; // Time in seconds between each request.
     private string lastResponse = "";
 
     public static long statusCode { get; private set; }

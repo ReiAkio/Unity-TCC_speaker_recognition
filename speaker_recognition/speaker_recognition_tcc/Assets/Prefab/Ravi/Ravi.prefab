@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 6681284452436430869}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 59, y: -28.9, z: 0}
-  m_LocalScale: {x: 3.4827, y: 3.4827, z: 3.4827}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -136,9 +136,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   targetTransform: {fileID: 0}
-  tvNewSprite: {fileID: 0}
-  doorNewSprite: {fileID: 0}
-  windowNewSprite: {fileID: 0}
+  tvOpenSprite: {fileID: 0}
+  tvClosedSprite: {fileID: 0}
+  doorOpenSprite: {fileID: 0}
+  doorClosedSprite: {fileID: 0}
+  windowOpenSprite: {fileID: 1596963379, guid: 03226adf86e82ec44b812bece6ca1915, type: 3}
+  windowClosedSprite: {fileID: 2074966025, guid: 03226adf86e82ec44b812bece6ca1915, type: 3}
+  rb: {fileID: 0}
 --- !u!61 &6681284452436430892
 BoxCollider2D:
   m_ObjectHideFlags: 0

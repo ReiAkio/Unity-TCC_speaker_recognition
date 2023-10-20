@@ -4,7 +4,11 @@ public class InteractiveObject : MonoBehaviour
 {
     private bool playerInRange = false;
     public PlayerActions playerActions;
+    public bool isOpen = false;
 
+    public float interactionCooldown = 1.0f; // Cooldown period in seconds
+    private float lastInteractionTime;
+    
     private void Start()
     {
         // Se playerActions não for definido no inspector, tente encontrar um automaticamente
@@ -17,6 +21,10 @@ public class InteractiveObject : MonoBehaviour
                 Debug.Log("Ravi entrou na área de trigger do objeto correto: " + gameObject.name);
                 playerActions.ExecuteTargetInteraction(); // Chame o método para interagir com o objeto
             }
+        }
+        if (playerActions != null)
+        {
+            playerActions.ExecuteTargetInteraction(); // This will set the initial sprite based on the 'isOpen' state.
         }
     }
 
