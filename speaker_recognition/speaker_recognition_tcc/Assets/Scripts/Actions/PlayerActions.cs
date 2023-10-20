@@ -28,7 +28,9 @@ public class PlayerActions : MonoBehaviour
         TurnOnTV,
         TurnOffTV,
         OpenWindow,
-        CloseWindow
+        CloseWindow,
+        TurnOnLight,
+        TurnOffLight
         // Add any more actions that you need here
     }
     private void Awake()
@@ -49,7 +51,8 @@ public class PlayerActions : MonoBehaviour
         {   
             if (moveToTarget && targetTransform != null)
             {
-                
+                Debug.Log("Target Transform: " + targetTransform.position);
+                Debug.Log("Transform: " + transform.position);
                 Vector2 direction = (targetTransform.position - transform.position).normalized;
 
                 direction.y = 0; // Ignora a componente 'y' na direção.
@@ -57,8 +60,9 @@ public class PlayerActions : MonoBehaviour
                 // Aplicar força na direção do target.
                 rb.AddForce(direction * speed * 100f * Time.deltaTime, ForceMode2D.Force); 
             }
-            if (targetTransform != null && Vector2.Distance(transform.position, targetTransform.position) < 0.5f) // or whatever distance is appropriate
-            {
+            if (targetTransform != null && Vector2.Distance(transform.position, targetTransform.position) < 0.2f) // or whatever distance is appropriate
+            { 
+                
                 ExecuteTargetInteraction();
                 StopMovement();
             }
@@ -132,6 +136,16 @@ public class PlayerActions : MonoBehaviour
                 {
                     currentAction = RaviAction.TurnOffTV;
                     InitiateMovementToObjectWithTag("Tv");
+                }
+                if (speech.Contains("ligue") && speech.Contains("luz"))
+                {
+                    currentAction = RaviAction.TurnOnLight;
+                    InitiateMovementToObjectWithTag("Light");
+                }
+                else if (speech.Contains("desligue") && speech.Contains("luz"))
+                {
+                    currentAction = RaviAction.TurnOffLight;
+                    InitiateMovementToObjectWithTag("Light");
                 }
 
             }
@@ -224,6 +238,12 @@ public class PlayerActions : MonoBehaviour
                         break;
                     case RaviAction.CloseWindow:
                         sr.sprite = windowClosedSprite;
+                        break;
+                    case RaviAction.TurnOnLight:
+                        GameObject.FindGameObjectWithTag("Light").SetActive(true);
+                        break;
+                    case RaviAction.TurnOffLight:
+                        GameObject.FindGameObjectWithTag("Light").SetActive(false);
                         break;
                     // ... other cases...
                     default:

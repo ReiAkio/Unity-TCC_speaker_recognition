@@ -68,7 +68,6 @@ public class InteractiveObject : MonoBehaviour
             {
                 {
                     playerInRange = true;
-                    Debug.Log("Ravi entrou na área de trigger do objeto correto: " + gameObject.name);
                     
                     playerActions.StopMovement();
 
@@ -83,7 +82,7 @@ public class InteractiveObject : MonoBehaviour
             }
             else if (playerActions.targetTransform != transform)
             {
-                Debug.Log("Ravi entrou em uma área de trigger, mas não é o objeto de destino: " + gameObject.name);
+                // Debug.Log("Ravi entrou em uma área de trigger, mas não é o objeto de destino: " + gameObject.name);
             }
         }
     }
