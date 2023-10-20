@@ -59,6 +59,17 @@ public class InteractiveObject : MonoBehaviour
         }
     }*/
     
+    public void CheckPlayerInRange(Transform playerTransform)
+    {
+        // Assuming you have a Collider2D component attached to this GameObject
+        Collider2D collider = GetComponent<Collider2D>();
+        if (collider != null)
+        {
+            playerInRange = collider.bounds.Contains(playerTransform.position);
+        }
+    }
+
+    
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Ravi"))

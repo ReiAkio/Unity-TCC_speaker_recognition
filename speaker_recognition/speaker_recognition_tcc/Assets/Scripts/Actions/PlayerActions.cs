@@ -190,12 +190,20 @@ public class PlayerActions : MonoBehaviour
             {
                 targetTransform = targetObject.transform;
                 InitiateMovement();
+
+                // Check if the player is already within range
+                InteractiveObject interactiveObj = targetObject.GetComponent<InteractiveObject>();
+                if (interactiveObj != null)
+                {
+                    interactiveObj.CheckPlayerInRange(transform);
+                }
             }
             else
             {
                 Debug.Log("Object with tag " + tag + " not found!");
             }
         }
+
 
         public void ExecuteTargetInteraction()
         {
@@ -212,6 +220,21 @@ public class PlayerActions : MonoBehaviour
             InteractiveObject interactiveObject = targetTransform.GetComponent<InteractiveObject>();
             SpriteRenderer sr = targetTransform.GetComponent<SpriteRenderer>();
 
+            GameObject lightObject = GameObject.FindGameObjectWithTag("Light");
+
+            if (lightObject != null)
+            {
+                bool isLightActive = lightObject.activeSelf;
+                Debug.Log("Current light status: " + (isLightActive ? "On" : "Off"));
+
+                // Now, we toggle the light status
+                lightObject.SetActive(!isLightActive);
+                Debug.Log("Light status changed to: " + (!isLightActive ? "On" : "Off"));
+            }
+            else
+            {
+                Debug.LogError("No object found with the 'Light' tag.");
+            }
             // Check if we can perform the action
             if (interactiveObject != null && sr != null && interactiveObject.CanPerformAction())
             {
