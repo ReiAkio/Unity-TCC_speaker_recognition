@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerActions : MonoBehaviour
 {
@@ -157,6 +158,16 @@ public class PlayerActions : MonoBehaviour
             rb.velocity = Vector2.zero; // Parar o personagem completamente
             petAnimManager.StopWalking(); // Parar a animação de caminhada
             
+            float direction = targetTransform.position.x - transform.position.x;
+
+            if (direction > 0)
+            {
+                petAnimManager.ExecuteOkRight();
+            }
+            else if (direction < 0)
+            {
+                petAnimManager.ExecuteOkLeft();
+            }
         }
         
         void InitiateMovement()
@@ -248,10 +259,10 @@ public class PlayerActions : MonoBehaviour
                         sr.sprite = windowClosedSprite;
                         break;
                     case RaviAction.TurnOnLight:
-                        GameObject.FindGameObjectWithTag("Light").SetActive(true);
+                        GameObject.FindGameObjectWithTag("Light").GetComponent<Light2D>().enabled = true;
                         break;
                     case RaviAction.TurnOffLight:
-                        GameObject.FindGameObjectWithTag("Light").SetActive(false);
+                        GameObject.FindGameObjectWithTag("Light").GetComponent<Light2D>().enabled = false;
                         break;
                     // ... other cases...
                     default:
