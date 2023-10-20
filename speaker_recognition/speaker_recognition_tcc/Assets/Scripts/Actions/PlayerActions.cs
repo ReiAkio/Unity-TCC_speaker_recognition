@@ -59,7 +59,9 @@ public class PlayerActions : MonoBehaviour
                 direction.y = 0; // Ignora a componente 'y' na direção.
                 
                 // Aplicar força na direção do target.
-                rb.AddForce(direction * speed * 100f * Time.deltaTime, ForceMode2D.Force); 
+                rb.velocity = direction * speed * 100f * Time.deltaTime;
+
+                //rb.velocity(direction * speed * 100f * Time.deltaTime, ForceMode2D.Force); 
             }
             if (targetTransform != null && Vector2.Distance(transform.position, targetTransform.position) < 0.2f) // or whatever distance is appropriate
             { 

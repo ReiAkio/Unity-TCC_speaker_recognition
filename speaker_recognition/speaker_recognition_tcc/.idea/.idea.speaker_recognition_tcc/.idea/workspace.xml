@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="855d7d82-3eff-491d-88cc-468c6b770365" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.speaker_recognition_tcc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.speaker_recognition_tcc/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Ravi/Ravi.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Ravi/Ravi.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actions/PlayerActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Actions/PlayerActions.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +108,7 @@
       <workItem from="1697656665464" duration="21297000" />
       <workItem from="1697756082430" duration="2336000" />
       <workItem from="1697807382836" duration="419000" />
-      <workItem from="1697817311256" duration="696000" />
+      <workItem from="1697817311256" duration="2713000" />
     </task>
     <servers />
   </component>
