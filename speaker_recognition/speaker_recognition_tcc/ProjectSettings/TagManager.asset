@@ -8,6 +8,7 @@ TagManager:
   - Window
   - Door
   - Ravi
+  - Light
   layers:
   - Default
   - TransparentFX
