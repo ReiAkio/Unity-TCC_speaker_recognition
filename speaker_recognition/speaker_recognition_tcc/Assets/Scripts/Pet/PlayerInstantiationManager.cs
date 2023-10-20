@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class PlayerInstantiationManager : MonoBehaviour
 {
-    public GameObject playerPrefab;// Assign your player prefab in the inspector
+    public GameObject playerPrefab; // Assign your player prefab in the inspector
     private PetAnimationManager petAnimManager;
+    private Vector3 instantiatePosition = new Vector3(0, -20, 0); // Define the position where you want to instantiate your player
 
     public bool CanPlayerAct()
     {
         return Connection.statusCode == 200;
     }
-
 
     private void Start()
     {
@@ -47,8 +47,8 @@ public class PlayerInstantiationManager : MonoBehaviour
 
     private void InstantiatePlayerWithNewColor()
     {
-        // Create a new player at position (0,0,0) and no rotation.
-        GameObject newPlayer = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
+        // Create a new player at the specified position and no rotation.
+        GameObject newPlayer = Instantiate(playerPrefab, instantiatePosition, Quaternion.identity);
 
         // Create a new random color.
         Color newColor = new Color(Random.value, Random.value, Random.value); 
