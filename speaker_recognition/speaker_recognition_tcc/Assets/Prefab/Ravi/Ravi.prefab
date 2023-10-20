@@ -136,12 +136,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   targetTransform: {fileID: 0}
-  tvOpenSprite: {fileID: 0}
-  tvClosedSprite: {fileID: 0}
-  doorOpenSprite: {fileID: 0}
-  doorClosedSprite: {fileID: 0}
-  windowOpenSprite: {fileID: 1596963379, guid: 03226adf86e82ec44b812bece6ca1915, type: 3}
-  windowClosedSprite: {fileID: 2074966025, guid: 03226adf86e82ec44b812bece6ca1915, type: 3}
+  interactionCooldown: 0.5
+  tvOpenSprite: {fileID: -1922167086, guid: 008f9184903e09546ac302128b2f6706, type: 3}
+  tvClosedSprite: {fileID: 309062905, guid: 008f9184903e09546ac302128b2f6706, type: 3}
+  doorOpenSprite: {fileID: -1181224858, guid: e2f54bd0a3c501546b44ed25397be0f7, type: 3}
+  doorClosedSprite: {fileID: 1581587823, guid: e2f54bd0a3c501546b44ed25397be0f7, type: 3}
+  windowOpenSprite: {fileID: -752801654, guid: 821406e811673014c8402f592e3cd906, type: 3}
+  windowClosedSprite: {fileID: -953675261, guid: 821406e811673014c8402f592e3cd906, type: 3}
   rb: {fileID: 0}
 --- !u!61 &6681284452436430892
 BoxCollider2D:

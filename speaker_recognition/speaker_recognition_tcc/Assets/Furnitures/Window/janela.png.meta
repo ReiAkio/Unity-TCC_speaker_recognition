@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 03226adf86e82ec44b812bece6ca1915
+guid: 821406e811673014c8402f592e3cd906
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheetjanela_0
+      name: janela_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c64f8e297b070ec4189638055c27f879
-      internalID: 1596963379
+      spriteID: f4d49e4eb7642e94097e52822e2f8b6f
+      internalID: -752801654
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetjanela_1
+      name: janela_1
       rect:
         serializedVersion: 2
         x: 1082
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7733f33b9a2f8414ca7b5c6d2cc1c0a4
-      internalID: 382879964
+      spriteID: 5dec55bd39033c34d9141dcdef4c9a56
+      internalID: -536173595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetjanela_2
+      name: janela_2
       rect:
         serializedVersion: 2
         x: 2164
@@ -160,8 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0919e23567b2e643a964c12af6c19ff
-      internalID: 2074966025
+      spriteID: 73ee553b1b390fe48ae8e64715b29496
+      internalID: -953675261
       vertices: []
       indices: 
       edges: []
@@ -177,9 +177,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spritesheetjanela_0: 1596963379
-      spritesheetjanela_2: 2074966025
-      spritesheetjanela_1: 382879964
+      janela_2: -953675261
+      janela_0: -752801654
+      janela_1: -536173595
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
