@@ -127,7 +127,7 @@ public class PlayerActions : MonoBehaviour
                     InitiateMovementToObjectWithTag("Window");
                 }
 
-                if (speech.Contains("ligue") && speech.Contains("tv"))
+                if (speech.Contains("ligue") && speech.Contains("tv") && !speech.Contains("des"))
                 {
                     currentAction = RaviAction.TurnOnTV;
                     InitiateMovementToObjectWithTag("Tv");
@@ -137,7 +137,7 @@ public class PlayerActions : MonoBehaviour
                     currentAction = RaviAction.TurnOffTV;
                     InitiateMovementToObjectWithTag("Tv");
                 }
-                if (speech.Contains("ligue") && speech.Contains("luz"))
+                if (speech.Contains("ligue") && speech.Contains("luz") && !speech.Contains("des"))
                 {
                     currentAction = RaviAction.TurnOnLight;
                     InitiateMovementToObjectWithTag("Light");
@@ -219,22 +219,7 @@ public class PlayerActions : MonoBehaviour
 
             InteractiveObject interactiveObject = targetTransform.GetComponent<InteractiveObject>();
             SpriteRenderer sr = targetTransform.GetComponent<SpriteRenderer>();
-
-            GameObject lightObject = GameObject.FindGameObjectWithTag("Light");
-
-            if (lightObject != null)
-            {
-                bool isLightActive = lightObject.activeSelf;
-                Debug.Log("Current light status: " + (isLightActive ? "On" : "Off"));
-
-                // Now, we toggle the light status
-                lightObject.SetActive(!isLightActive);
-                Debug.Log("Light status changed to: " + (!isLightActive ? "On" : "Off"));
-            }
-            else
-            {
-                Debug.LogError("No object found with the 'Light' tag.");
-            }
+            
             // Check if we can perform the action
             if (interactiveObject != null && sr != null && interactiveObject.CanPerformAction())
             {
