@@ -18,7 +18,19 @@ public class PlayerActions : MonoBehaviour
     public Sprite windowClosedSprite;
     private PetAnimationManager petAnimManager;
     public Rigidbody2D rb;
+    private RaviAction currentAction = RaviAction.None;
 
+    public enum RaviAction
+    {
+        None,
+        OpenDoor,
+        CloseDoor,
+        TurnOnTV,
+        TurnOffTV,
+        OpenWindow,
+        CloseWindow
+        // Add any more actions that you need here
+    }
     private void Awake()
     {
         petAnimManager = GetComponent<PetAnimationManager>();
@@ -44,6 +56,11 @@ public class PlayerActions : MonoBehaviour
                 
                 // Aplicar força na direção do target.
                 rb.AddForce(direction * speed * 100f * Time.deltaTime, ForceMode2D.Force); 
+            }
+            if (targetTransform != null && Vector2.Distance(transform.position, targetTransform.position) < 0.5f) // or whatever distance is appropriate
+            {
+                ExecuteTargetInteraction();
+                StopMovement();
             }
             else if (moveToTarget && targetTransform == null)
             {
@@ -81,50 +98,45 @@ public class PlayerActions : MonoBehaviour
         {
             Debug.Log("raviSpeaker" + Connection.raviSpeaker);
             Debug.Log("predictionSpeaker" + Connection.predictionSpeaker);
-            
-            if (speech.Contains("oi ravi") && speech.Contains("abra") && speech.Contains("porta") && Connection.raviSpeaker == Connection.predictionSpeaker)
+
+            if (speech.Contains("oi ravi") && Connection.raviSpeaker == Connection.predictionSpeaker)
             {
-                GameObject tvObject = GameObject.FindGameObjectWithTag("Door");
-                if (tvObject != null)
+                if (speech.Contains("abra") && speech.Contains("porta"))
                 {
-                    targetTransform = tvObject.transform;
-                    InitiateMovement();
+                    currentAction = RaviAction.OpenDoor;
+                    InitiateMovementToObjectWithTag("Door");
                 }
-                else
+                else if (speech.Contains("feche") && speech.Contains("porta"))
                 {
-                    Debug.Log("Objeto Porta não encontrado!");
+                    currentAction = RaviAction.CloseDoor;
+                    InitiateMovementToObjectWithTag("Door");
                 }
+
+                if (speech.Contains("abra") && speech.Contains("janela"))
+                {
+                    currentAction = RaviAction.OpenWindow;
+                    InitiateMovementToObjectWithTag("Window");
+                }
+                else if (speech.Contains("feche") && speech.Contains("janela"))
+                {
+                    currentAction = RaviAction.CloseWindow;
+                    InitiateMovementToObjectWithTag("Window");
+                }
+
+                if (speech.Contains("ligue") && speech.Contains("tv"))
+                {
+                    currentAction = RaviAction.TurnOnTV;
+                    InitiateMovementToObjectWithTag("Tv");
+                }
+                else if (speech.Contains("desligue") && speech.Contains("tv"))
+                {
+                    currentAction = RaviAction.TurnOffTV;
+                    InitiateMovementToObjectWithTag("Tv");
+                }
+
             }
-            if (speech.Contains("oi ravi") && speech.Contains("tv") && Connection.raviSpeaker == Connection.predictionSpeaker)
-            {
-                GameObject tvObject = GameObject.FindGameObjectWithTag("Tv");
-                if (tvObject != null)
-                {
-                    Debug.Log("oi");
-                    targetTransform = tvObject.transform;
-                    InitiateMovement();
-                }
-                else
-                {
-                    Debug.Log("Objeto tv não encontrado!");
-                }
-            }
-            if (speech.Contains("oi ravi") && speech.Contains("abra") && speech.Contains("janela")&& Connection.raviSpeaker == Connection.predictionSpeaker)
-            {
-                GameObject tvObject = GameObject.FindGameObjectWithTag("Window");
-                if (tvObject != null)
-                {
-                    targetTransform = tvObject.transform;
-                    InitiateMovement();
-                }
-                else
-                {
-                    Debug.Log("Objeto Window não encontrado!");
-                }
-            }
-            
         }
-        
+
         public void StopMovement()
         {
             moveToTarget = false;
@@ -156,6 +168,20 @@ public class PlayerActions : MonoBehaviour
                 Debug.Log("Target transform is null."); // And this
             }
         }
+        
+        void InitiateMovementToObjectWithTag(string tag)
+        {
+            GameObject targetObject = GameObject.FindGameObjectWithTag(tag);
+            if (targetObject != null)
+            {
+                targetTransform = targetObject.transform;
+                InitiateMovement();
+            }
+            else
+            {
+                Debug.Log("Object with tag " + tag + " not found!");
+            }
+        }
 
         public void ExecuteTargetInteraction()
         {
@@ -179,18 +205,30 @@ public class PlayerActions : MonoBehaviour
                 interactiveObject.isOpen = !interactiveObject.isOpen;
 
                 // Set the sprite based on the new isOpen status
-                switch (targetTransform.tag)
+                switch (currentAction)
                 {
-                    case "Tv":
-                        sr.sprite = interactiveObject.isOpen ? tvOpenSprite : tvClosedSprite;
+                    case RaviAction.OpenDoor:
+                        sr.sprite = doorOpenSprite;
                         break;
-                    case "Door":
-                        sr.sprite = interactiveObject.isOpen ? doorOpenSprite : doorClosedSprite;
+                    case RaviAction.CloseDoor:
+                        sr.sprite = doorClosedSprite;
                         break;
-                    case "Window":
-                        sr.sprite = interactiveObject.isOpen ? windowOpenSprite : windowClosedSprite;
+                    case RaviAction.TurnOnTV:
+                        sr.sprite = tvOpenSprite;
                         break;
-                    // Add more cases as needed
+                    case RaviAction.TurnOffTV:
+                        sr.sprite = tvClosedSprite;
+                        break;
+                    case RaviAction.OpenWindow:
+                        sr.sprite = windowOpenSprite;
+                        break;
+                    case RaviAction.CloseWindow:
+                        sr.sprite = windowClosedSprite;
+                        break;
+                    // ... other cases...
+                    default:
+                        Debug.Log("No action set or action not recognized.");
+                        break;
                 }
 
                 lastInteractionTime = Time.time; // Update the last interaction time after a successful interaction
