@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861e97d83e74cc348a99f59b894181ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 15
   targetTransform: {fileID: 0}
   interactionCooldown: 0.5
   tvOpenSprite: {fileID: -1922167086, guid: 008f9184903e09546ac302128b2f6706, type: 3}
